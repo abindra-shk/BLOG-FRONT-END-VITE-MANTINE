@@ -1,6 +1,24 @@
 import { Logo } from '../common/Logo';
+import {useEffect, useState} from "react";
 
 export const LandingNav = () => {
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 300) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     const navItems = [
         { label: 'Home', path: '/Home' },
         { label: 'Write', path: '/Write' },
@@ -8,8 +26,8 @@ export const LandingNav = () => {
     ];
 
     return (
-        <nav className="flex w-full h-full items-center justify-between px-4 border-b border-black"
-             style={{background: '#FFC017'}}
+        <nav className="flex w-full h-full items-center justify-between border-b border-black"
+             style={{background: scrolled ? 'white' : '#FFC017'}}
             >
             <div className="flex items-center w-full m-28">
                 <div className="flex-none ">
@@ -25,7 +43,9 @@ export const LandingNav = () => {
                             {v.label}
                         </a>
                     ))}
-                    <button className="text-white bg-black hover:underline px-4 py-2 rounded-3xl">
+                    <button className={`text-white hover:underline ${
+                        scrolled ? 'bg-green-600' : 'bg-black'
+                     } px-4 py-2 rounded-3xl`}>
                         Get Started
                     </button>
                 </div>
