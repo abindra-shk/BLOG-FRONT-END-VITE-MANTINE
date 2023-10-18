@@ -48,8 +48,8 @@ export const LandingNav = () => {
                 </div>
             </div>
         </nav>
-        <SignupForm open={isSignupVisible} close={()=>{setIsSignupVisible(false)}}/>
-        <LoginForm open={isLoginVisible} close={()=>{setIsLoginVisible(false)}}/>
+        <SignupForm open={isSignupVisible} close={()=>{setIsSignupVisible(false)}} login={LoginHandler}/>
+        <LoginForm open={isLoginVisible} close={()=>{setIsLoginVisible(false)}} signup={SignupHandler}/>
     </>
     );
 };
