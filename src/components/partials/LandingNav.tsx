@@ -42,6 +42,7 @@ export const LandingNav = () => {
     }
 
     return (
+        <>
        <nav className="flex w-full h-full items-center justify-between border-b border-black"
              style={{background: scrolled ? 'white' : '#FFC017'}}
 
