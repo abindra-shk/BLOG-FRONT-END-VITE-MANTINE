@@ -1,4 +1,7 @@
 import { Logo } from '../common/Logo';
+import { useState } from 'react';
+import { SignupForm } from '../modules/Landing/signupform';
+
 
 export const LandingNav = () => {
     const navItems = [
@@ -7,7 +10,13 @@ export const LandingNav = () => {
         { label: 'Sign In', path: '/SignIn' },
     ];
 
+    const [isLoginVisible, setIsLoginVisible]= useState(false);
+    const [isSignupVisible, setIsSignupVisible] = useState(false);
+    const SignupHandler=()=>{
+        setIsSignupVisible(true);
+    }
     return (
+        <>
         <nav className="flex w-full h-full items-center justify-between px-4 border-b border-black"
              style={{background: '#FFC017'}}
             >
@@ -25,12 +34,13 @@ export const LandingNav = () => {
                             {v.label}
                         </a>
                     ))}
-                    <button className="text-white bg-black hover:underline px-4 py-2 rounded-3xl">
+                    <button className="text-white bg-black hover:underline px-4 py-2 rounded-3xl" onClick={SignupHandler}>
                         Get Started
                     </button>
                 </div>
             </div>
-
         </nav>
+        <SignupForm open={isSignupVisible} close={()=>{setIsSignupVisible(false)}}/>
+    </>
     );
 };
