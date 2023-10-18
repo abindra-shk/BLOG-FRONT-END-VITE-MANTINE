@@ -40,3 +40,30 @@
 .read-the-docs {
   color: #888;
 }
+
+.zoom-in {
+  animation: zoom-in 0.2s ease-in-out;
+}
+@keyframes zoom-in {
+  from {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.2s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
