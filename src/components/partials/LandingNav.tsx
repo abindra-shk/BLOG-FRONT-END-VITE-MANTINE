@@ -13,12 +13,17 @@ export const LandingNav = () => {
 
     const [isLoginVisible, setIsLoginVisible]= useState(false);
     const [isSignupVisible, setIsSignupVisible] = useState(false);
+    const [isSwitched, setIsSwitched]= useState(false);
     const SignupHandler=()=>{
         setIsSignupVisible(true);
     }
     const LoginHandler=()=>{
         setIsLoginVisible(true);
     }
+    const SwitchHandler=()=>{
+        setIsSwitched(true);
+    }
+
     return (
         <>
         <nav className="flex w-full h-full items-center justify-between px-4 border-b border-black"
@@ -48,8 +53,8 @@ export const LandingNav = () => {
                 </div>
             </div>
         </nav>
-        <SignupForm open={isSignupVisible} close={()=>{setIsSignupVisible(false)}} login={LoginHandler}/>
-        <LoginForm open={isLoginVisible} close={()=>{setIsLoginVisible(false)}} signup={SignupHandler}/>
+        <SignupForm open={isSignupVisible} close={()=>{setIsSignupVisible(false);setIsSwitched(false)}} login={LoginHandler} isSwitched={isSwitched} switch={SwitchHandler}/>
+        <LoginForm open={isLoginVisible} close={()=>{setIsLoginVisible(false);setIsSwitched(false)}} signup={SignupHandler} isSwitched={isSwitched} switch={SwitchHandler}/>
     </>
     );
 };

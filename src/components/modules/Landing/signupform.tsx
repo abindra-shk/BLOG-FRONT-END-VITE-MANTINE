@@ -4,9 +4,10 @@ export const SignupForm=(props:any)=>{
     const SignIn=()=>{
         props.close();
         props.login();
+        props.switch();
     }
 return(
-    props.open &&(<DialogBox open={props.open} close={props.close}>
+    props.open &&(<DialogBox open={props.open} close={props.close} isSwitched={props.isSwitched}>
         <div>Join Medium.</div>
         <div>Sign up with Google</div>
         <div>Sign up with Facebook</div>
