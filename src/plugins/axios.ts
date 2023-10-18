@@ -1,5 +1,3 @@
-
-
 import axios, {AxiosInstance} from 'axios';
 import {store} from "../store/store";
 import {logoutUser} from "../store/modules/auth/actions";
