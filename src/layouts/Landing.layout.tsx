@@ -43,7 +43,10 @@ export function LandingLayout() {
             <AppShell.Main>
                 <Homefirstsection/>
 
+
                 <Homesecondsection blogs={blogs}/>
+                <Homefirstsection/>
+                <Homefirstsection/>
             </AppShell.Main>
         </AppShell>
     );
