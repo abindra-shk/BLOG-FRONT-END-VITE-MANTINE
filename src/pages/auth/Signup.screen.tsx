@@ -1,7 +1,16 @@
 import { useNavigate } from "react-router";
+import { useState } from "react";
 
 export const SignupScreen = () => {
   const navigate = useNavigate();
+  const [passwordVisibility, setPasswordVisibility] = useState(false);
+  const PasswordVisibilityHandler = () => {
+    setPasswordVisibility(!passwordVisibility);
+  };
+  const [rePasswordVisibility, setRePasswordVisibility] = useState(false);
+  const RePasswordVisibilityHandler = () => {
+    setRePasswordVisibility(!rePasswordVisibility);
+  };
   return (
     <div className="w-screen h-screen font-sans flex items-center justify-center relative bg-gradient-to-b from-yellow-800 via-yellow-400 to-yellow-800">
       <div className="w-2/5 absolute left-0 h-full flex flex-col items-center justify-center text-3xl">
@@ -11,12 +20,12 @@ export const SignupScreen = () => {
         <div className="text-3xl font-bold">Sign Up</div>
         <div className="mt-3 mb-6">Create an account.</div>
         <form>
-          <div className="container">
+          <div className="container mb-4">
             <input
               type="text"
               name="fname"
               placeholder="First Name"
-              className="border rounded p-2 mr-4 mb-4 input-width"
+              className="border rounded p-2 mr-4 input-width"
             />
             <input
               type="text"
@@ -25,12 +34,12 @@ export const SignupScreen = () => {
               className="border rounded p-2 input-width"
             />
           </div>
-          <div className="container">
+          <div className="container mb-4">
             <input
               type="text"
               name="username"
               placeholder="Username"
-              className="border rounded p-2 mr-4 mb-4 input-width"
+              className="border rounded p-2 mr-4 input-width"
             />
             <select className="border rounded p-2 input-width" name="gender">
               <option disabled selected>
@@ -40,12 +49,12 @@ export const SignupScreen = () => {
               <option>Female</option>
             </select>
           </div>
-          <div className="container">
+          <div className="container mb-4">
             <input
               type="text"
               name="email"
               placeholder="Email Address"
-              className="border rounded p-2 mr-4 mb-4 input-width"
+              className="border rounded p-2 mr-4 input-width"
             />
             <input
               type="text"
@@ -54,19 +63,35 @@ export const SignupScreen = () => {
               className="border rounded p-2 input-width"
             />
           </div>
-          <div className="container">
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="border rounded p-2 mr-4 mb-4 input-width"
-            />
-            <input
-              type="password"
-              name="repassword"
-              placeholder="Confirm Password"
-              className="border rounded p-2 input-width"
-            />
+          <div className="container mb-4">
+            <span className="relative input-width mr-4">
+              <input
+                type={passwordVisibility ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+                className="border rounded p-2  input-width"
+              />
+              <span
+                className="absolute right-2 material-icons pt-2 cursor-pointer"
+                onClick={PasswordVisibilityHandler}
+              >
+                {passwordVisibility ? "visibility_off" : "visibility"}
+              </span>
+            </span>
+            <span className="relative input-width">
+              <input
+                type={rePasswordVisibility ? "text" : "password"}
+                name="repassword"
+                placeholder="Confirm Password"
+                className="border rounded p-2 input-width"
+              />
+              <span
+                className="absolute right-2 material-icons pt-2 cursor-pointer"
+                onClick={RePasswordVisibilityHandler}
+              >
+                {rePasswordVisibility ? "visibility_off" : "visibility"}
+              </span>
+            </span>
           </div>
           <input
             type="submit"

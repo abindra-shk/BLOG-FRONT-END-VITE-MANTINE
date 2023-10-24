@@ -1,7 +1,12 @@
 import { useNavigate } from "react-router";
+import { useState } from "react";
 
 export const SignInScreen = () => {
   const navigate = useNavigate();
+  const [passwordVisibility, setPasswordVisibility] = useState(false);
+  const PasswordVisibilityHandler = () => {
+    setPasswordVisibility(!passwordVisibility);
+  };
   return (
     <div className="w-screen h-screen font-sans flex items-center justify-center relative bg-gradient-to-b from-yellow-800 via-yellow-400 to-yellow-800">
       <div className="w-2/5 absolute left-0 h-full flex flex-col items-center justify-center text-3xl">
@@ -20,12 +25,20 @@ export const SignInScreen = () => {
             />
           </div>
           <div className="container">
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="border rounded p-2 mr-4 mb-4 w-full"
-            />
+            <span className="relative w-full">
+              <input
+                type={passwordVisibility ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+                className="border rounded p-2 w-full"
+              />
+              <span
+                className="absolute right-2 material-icons pt-2 cursor-pointer"
+                onClick={PasswordVisibilityHandler}
+              >
+                {passwordVisibility ? "visibility_off" : "visibility"}
+              </span>
+            </span>
           </div>
           <input
             type="submit"
