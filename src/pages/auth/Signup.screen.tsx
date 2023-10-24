@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { useState } from "react";
+import { LeftScreen } from "../../components/modules/auth/Left.screen";
 
 export const SignupScreen = () => {
   const navigate = useNavigate();
@@ -13,9 +14,7 @@ export const SignupScreen = () => {
   };
   return (
     <div className="w-screen h-screen font-sans flex items-center justify-center relative bg-gradient-to-b from-yellow-800 via-yellow-400 to-yellow-800">
-      <div className="w-2/5 absolute left-0 h-full flex flex-col items-center justify-center text-3xl">
-        <div>Welcome to</div> <div className="font-bold">Medium</div>
-      </div>
+      <LeftScreen />
       <div className="w-3/5 absolute right-0 h-full rounded-l-2xl bg-white px-24 py-10">
         <div className="text-3xl font-bold">Sign Up</div>
         <div className="mt-3 mb-6">Create an account.</div>
