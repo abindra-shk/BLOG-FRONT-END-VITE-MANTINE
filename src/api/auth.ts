@@ -6,7 +6,7 @@ export const APIAuthenticateUser = (data: ILoginUser)=>{
 }
 
 export const APIRegisterUser = (data: IRegisterUser)=>{
-    return PostRequest('user/create', data);
+    return PostRequest('user/register', data);
 }
 
 export const APIForgetPassword = (data: IUserEmail)=>{
