@@ -1,3 +1,5 @@
+import {BlogType} from "./blogtype.interface.tsx";
+
 export interface BlogInterface {
     _id: string;
     title: string;
@@ -7,7 +9,7 @@ export interface BlogInterface {
         username: string;
     };
     status: number;
-    blogtypes: string[]; // Assuming blogtypes are represented as an array of strings (IDs)
+    blogtypes: BlogType[];
     createdAt: Date; // Represented as a Date object
     updatedAt: Date; // Represented as a Date object
 }
