@@ -1,13 +1,16 @@
 
 export interface ILoginUser {
-    readonly email: string
+    readonly username: string
     readonly password: string
 }
 
 export interface IRegisterUser {
-    // name:string,
-    // phone:string,
+    firstname:string,
+    lastname:string,
+    gender:string;
+    dob:string;
     readonly email: string
+    readonly username: string
     readonly password: string
     readonly role: string
 }

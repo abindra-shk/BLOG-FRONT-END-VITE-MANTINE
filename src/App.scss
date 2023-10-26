@@ -74,9 +74,15 @@ body, html{
   }
 }
 
+
 .blog-type-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+}
+
+
+.input-width {
+  width: calc(50% - 0.5rem);
 }
 
