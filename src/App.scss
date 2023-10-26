@@ -4,7 +4,13 @@
 //  padding: 2rem;
 //  text-align: center;
 //}
-
+*{
+  box-sizing: border-box;
+}
+body, html{
+  margin: 0;
+  padding: 0;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -68,6 +74,15 @@
   }
 }
 
+
+.blog-type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+
 .input-width {
   width: calc(50% - 0.5rem);
 }
+
