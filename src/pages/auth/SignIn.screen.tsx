@@ -4,6 +4,8 @@ import { LeftScreen } from "../../components/modules/auth/Left.screen";
 import { ILoginUser } from "../../utils/interfaces/LoginUser.interface";
 import { useDispatch } from "react-redux";
 import { authenticateUser } from "../../store/modules/auth/actions";
+import { APIGetMyDetails } from "../../api/auth";
+import { saveUser } from "../../utils/helpers/tokenStorage.helper";
 
 export const SignInScreen = () => {
   const navigate = useNavigate();
@@ -21,11 +23,13 @@ export const SignInScreen = () => {
     });
   };
 
-  const submitForm = (e: any) => {
+  const submitForm = async (e: any) => {
     e.preventDefault();
     try {
-      dispatch(authenticateUser(user));
-      navigate("/fyp");
+      const res: any = await dispatch(authenticateUser(user));
+      const userDetails = await APIGetMyDetails();
+      saveUser(userDetails.data);
+      res ? navigate("/fyp") : console.log("Incorrect credentials");
     } catch (e) {
       console.log(e);
     }

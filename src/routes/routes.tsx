@@ -5,6 +5,7 @@ import { SignupScreen } from "../pages/auth/Signup.screen";
 import { SignInScreen } from "../pages/auth/SignIn.screen";
 import { BlogPage } from "../layouts/BlogPage.layout.tsx";
 import { Fyp } from "../pages/authenticated/fyp.tsx";
+import { Write } from "../pages/authenticated/write.tsx";
 const MainRoute = () => {
   return (
     <Routes>
@@ -15,6 +16,7 @@ const MainRoute = () => {
       <Route path={"/signup"} element={<SignupScreen />} />
       <Route path={"/signin"} element={<SignInScreen />} />
       <Route path={"/fyp"} element={<Fyp />} />
+      <Route path={"/write"} element={<Write />} />
     </Routes>
   );
 };

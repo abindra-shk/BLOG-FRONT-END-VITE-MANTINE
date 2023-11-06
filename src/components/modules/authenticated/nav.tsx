@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router";
 import logo from "../../../assets/bloglogo.png";
-import user from "../../../assets/user.png";
+import { Dp } from "../../common/dp";
 export const Nav = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex w-full h-16 items-center justify-between border-b border-gray-200 px-8">
@@ -17,13 +19,14 @@ export const Nav = () => {
           </div>
         </div>
         <div className="flex items-center text-gray-600">
-          <div className="pr-8 flex items-center">
+          <div
+            className="pr-8 flex items-center cursor-pointer hover:text-black"
+            onClick={() => navigate("/write")}
+          >
             <span className="material-icons">edit_square</span>Write
           </div>
           <div className="pr-8 material-icons">notifications</div>
-          <div className="w-8 h-8 rounded-full overflow-hidden border">
-            <img className="h-full w-full" src={user} />
-          </div>
+          <Dp />
         </div>
       </div>
     </>

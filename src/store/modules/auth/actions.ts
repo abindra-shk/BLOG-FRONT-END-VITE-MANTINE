@@ -44,10 +44,10 @@ export const setUserData = (data: any) => {
 export const authenticateUser = (user: ILoginUser) => async (dispatch: any) => {
     const res: any = await APIAuthenticateUser(user);
     if (res) {
-        dispatch(setAuthData({user: res.data?.user, authentication: res['authentication']}));
-        saveToken(res.authentication.access_token);
-        saveUser(res.data?.user);
-        setAuthorizationHeader(res.authentication.access_token);
+        dispatch(setAuthData({user: res.data, authentication: res['authentication']}));
+        saveToken(res.token?.token);
+        saveUser(res.data);
+        setAuthorizationHeader(res.token?.token);
     }
     return res;
 }
