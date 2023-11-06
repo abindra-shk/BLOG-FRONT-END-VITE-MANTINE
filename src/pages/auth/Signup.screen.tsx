@@ -40,7 +40,6 @@ export const SignupScreen = () => {
       return;
     }
     try {
-      console.log("hello");
       await dispatch(createUser(user));
     } catch (e) {
       console.log(e);

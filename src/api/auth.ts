@@ -21,6 +21,9 @@ export const APIUpdatePassword = (data: IUpdatePassword)=>{
     return PutRequest('user/update-password',data);
 }
 
+export const APIGetMyDetails = ()=>{
+    return GetRequest('user/me');
+}
 
 export const APIGetSDOHQuestions = ()=>{
     return GetRequest('/patient/getAllSdh')

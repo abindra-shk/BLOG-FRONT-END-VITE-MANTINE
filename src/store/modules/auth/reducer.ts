@@ -1,5 +1,5 @@
 import {LOGOUT_USER, SET_AUTH_DATA, SET_TOKEN, SET_USER} from "./actionTypes";
-import {getToken} from "../../../utils/helpers/tokenStorage.helper";
+import {getToken, getUser} from "../../../utils/helpers/tokenStorage.helper";
 import {isAuthenticated} from "../../../utils/helpers/checkIfAuthenticated";
 
 interface IAuthenticationState {
@@ -11,7 +11,7 @@ interface IAuthenticationState {
 
 const initialState: IAuthenticationState = {
     authenticated: {},
-    user: {},
+    user: getUser() ?? null,
     isLoggedIn: isAuthenticated(),
     token: getToken()
 }
