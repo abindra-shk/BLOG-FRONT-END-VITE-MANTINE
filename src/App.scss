@@ -4,10 +4,11 @@
 //  padding: 2rem;
 //  text-align: center;
 //}
-*{
+* {
   box-sizing: border-box;
 }
-body, html{
+body,
+html {
   margin: 0;
   padding: 0;
 }
@@ -74,15 +75,12 @@ body, html{
   }
 }
 
-
 .blog-type-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
-
 .input-width {
   width: calc(50% - 0.5rem);
 }
-

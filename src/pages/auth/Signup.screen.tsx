@@ -50,11 +50,11 @@ export const SignupScreen = () => {
   return (
     <div className="w-screen h-screen font-sans flex items-center justify-center relative bg-gradient-to-b from-yellow-800 via-yellow-400 to-yellow-800">
       <LeftScreen />
-      <div className="w-3/5 absolute right-0 h-full rounded-l-2xl bg-white px-24 py-10">
+      <div className="md:w-3/5 w-full absolute right-0 h-full rounded-l-2xl bg-white px-24 py-10">
         <div className="text-3xl font-bold">Sign Up</div>
         <div className="mt-3 mb-6">Create an account.</div>
         <form onSubmit={submitForm}>
-          <div className="container mb-4">
+          <div className="container mb-4 flex md:flex-row flex-col">
             <input
               type="text"
               name="firstname"
@@ -72,7 +72,7 @@ export const SignupScreen = () => {
               onChange={formHandler}
             />
           </div>
-          <div className="container mb-4">
+          <div className="container mb-4 flex md:flex-row flex-col">
             <input
               type="text"
               name="username"
@@ -93,7 +93,7 @@ export const SignupScreen = () => {
               <option value="female">Female</option>
             </select>
           </div>
-          <div className="container mb-4">
+          <div className="container mb-4 flex md:flex-row flex-col">
             <input
               type="text"
               name="email"
@@ -111,13 +111,13 @@ export const SignupScreen = () => {
               onChange={formHandler}
             />
           </div>
-          <div className="container mb-4">
-            <span className="relative input-width mr-4">
+          <div className="container mb-4 flex md:flex-row flex-col">
+            <span className="relative input-width mr-4 flex">
               <input
                 type={passwordVisibility ? "text" : "password"}
                 name="password"
                 placeholder="Password"
-                className="border rounded p-2  input-width"
+                className="border rounded p-2 w-full"
                 onChange={formHandler}
               />
               <span
@@ -127,12 +127,12 @@ export const SignupScreen = () => {
                 {passwordVisibility ? "visibility_off" : "visibility"}
               </span>
             </span>
-            <span className="relative input-width">
+            <span className="relative input-width flex">
               <input
                 type={rePasswordVisibility ? "text" : "password"}
                 name="repassword"
                 placeholder="Confirm Password"
-                className="border rounded p-2 input-width"
+                className="border rounded p-2 w-full"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <span

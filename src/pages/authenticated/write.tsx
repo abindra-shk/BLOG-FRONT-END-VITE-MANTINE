@@ -8,31 +8,6 @@ import { getUser } from "../../utils/helpers/tokenStorage.helper";
 
 export const Write = () => {
   const user = getUser();
-  console.log(user);
-  // const [userDetails, setUserDetails] = useState<IUserDetails>({
-  //   firstname: "",
-  //   lastname: "",
-  //   gender: "",
-  //   dob: "",
-  //   email: "",
-  //   username: "",
-  //   password: "",
-  //   role: "",
-  // });
-
-  // const loadUserDetails = async () => {
-  //   try {
-  //     const res = await axios.get(`http://localhost:8001/user/${user._id}`);
-  //     setUserDetails(res.data.data);
-  //     console.log(userDetails);
-  //   } catch (error) {
-  //     console.error("Error loading user details:", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   loadUserDetails();
-  // }, []);
 
   const [blog, setBlog] = useState<IBlog>({
     title: "",
